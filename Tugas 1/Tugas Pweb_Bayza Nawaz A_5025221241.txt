@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perkenalan dan CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF; /* Warna biru */
+        }
+        h2 {
+            margin-top: 20px;
+            color: #333; /* Warna abu-abu gelap */
+        }
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 4px solid #007BFF; /* Garis tepi biru */
+            border-radius: 10px; /* Sudut membulatkan */
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Bayangan lembut */
+        }
+    </style>
+</head>
+<body>
+    <h1>Perkenalan dan CV</h1>
+    <h2>Identitas</h2>
+    <p>Nama: [Nama Anda]</p>
+    <p>Alamat: [Alamat Anda]</p>
+    <p>Email: [Alamat Email Anda]</p>
+    
+    <h2>Mindset dan Cita-Cita</h2>
+    <p style="font-style: italic;">Saya memiliki semangat tinggi dalam mencapai cita-cita saya. Saya percaya bahwa saya dapat mencapai tujuan yang saya impikan.</p>
+    
+    <h2>Skillset yang Dikuasai</h2>
+    <ul>
+        <li>[Skill 1]</li>
+        <li>[Skill 2]</li>
+        <li>[Skill 3]</li>
+        <!-- Tambahkan skill lainnya sesuai dengan yang Anda kuasai -->
+    </ul>
+    
+    <h2>Toolset yang Dikuasai</h2>
+    <ul>
+        <li>[Tool 1]</li>
+        <li>[Tool 2]</li>
+        <li>[Tool 3]</li>
+        <!-- Tambahkan tool lainnya sesuai dengan yang Anda kuasai -->
+    </ul>
+    
+    <h2>Foto Pendukung</h2>
+    <img src="[URL Foto Anda]" alt="Foto Anda">
+</body>
+</html>

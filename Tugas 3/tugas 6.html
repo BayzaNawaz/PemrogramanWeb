@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        #nama-rekomendasi {
+            margin-top: 8px;
+            font-style: italic;
+            color: #888;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const daftarNama = [
+                "John Doe",
+                "Jane Doe",
+                "Alice Johnson",
+                "Bob Smith",
+                "Charlie Brown",
+                "David Miller",
+            ];
+
+            const daftarJurusan = [
+                "Teknik Informatika",
+                "Sistem Informasi",
+                "Teknik Elektro",
+                "Teknik Kimia",
+                "Manajemen",
+                "Akuntansi",
+            ];
+
+            function tampilkanRekomendasi() {
+                const inputNama = document.getElementById("nama");
+                const rekomendasiContainer = document.getElementById("nama-rekomendasi");
+
+                const inputText = inputNama.value.toLowerCase();
+                const rekomendasi = daftarNama.filter(nama => nama.toLowerCase().startsWith(inputText));
+
+                rekomendasiContainer.textContent = rekomendasi.length > 0 ? `Rekomendasi: ${rekomendasi.join(", ")}` : "";
+            }
+
+            function tampilkanPilihanJurusan() {
+                const checkboxContainer = document.getElementById("checkbox-container");
+
+                checkboxContainer.innerHTML = "";
+
+                daftarJurusan.forEach(jurusan => {
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.name = "jurusan";
+                    checkbox.value = jurusan;
+                    checkbox.id = jurusan.toLowerCase().replace(" ", "-");
+                    const label = document.createElement("label");
+                    label.textContent = jurusan;
+                    label.setAttribute("for", jurusan.toLowerCase().replace(" ", "-"));
+
+                    checkboxContainer.appendChild(checkbox);
+                    checkboxContainer.appendChild(label);
+                    checkboxContainer.appendChild(document.createElement("br"));
+                });
+            }
+
+            document.getElementById("nama").addEventListener("input", tampilkanRekomendasi);
+
+            document.getElementById("tampilkan-jurusan").addEventListener("click", tampilkanPilihanJurusan);
+        });
+    </script>
+    <title>Form Registrasi</title>
+</head>
+<body>
+    <form>
+        <label for="nama">Nama Mahasiswa:</label>
+        <input type="text" id="nama" name="nama" required>
+        <div id="nama-rekomendasi"></div>
+
+        <label for="nim">NIM:</label>
+        <input type="text" id="nim" name="nim" required>
+
+        <label for="mata-kuliah">Mata Kuliah:</label>
+        <input type="text" id="mata-kuliah" name="mata-kuliah" required>
+
+        <div id="checkbox-container">
+        </div>
+
+        <label for="dosen">Dosen:</label>
+        <input type="text" id="dosen" name="dosen" required>
+
+        <button type="submit">Submit</button>
+        <button type="button" id="tampilkan-jurusan">Tampilkan Jurusan</button>
+    </form>
+</body>
+</html>
